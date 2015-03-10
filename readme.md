@@ -24,3 +24,5 @@ create table title_domains(
 １．网址链接相同部分删除效果差
 ２．多线程执行
  
+ ##running
+ ruby get_baidu.rb
