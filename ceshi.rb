@@ -24,15 +24,15 @@ class Yang
 	end
 end
 
-yang = Yang.new
-loop do
-	if yang.add().size < 10
-		puts yang.add().size
-		yang.add()
-	else
-		break
-	end
-end
+#yang = Yang.new
+#loop do
+#	if yang.add().size < 10
+#		puts yang.add().size
+#		yang.add()
+#	else
+#		break
+#	end
+#end
 #yang.add()
 #yang.output
 #yang.changedata
@@ -49,9 +49,31 @@ class Customer
 end
 
 # 创建对象
-cust1=Customer.new #("1", "John", "Wisdom Apartments, Ludhiya")
-cust2=Customer.new #("2", "Poul", "New Empire road, Khandala")
+#cust1=Customer.new #("1", "John", "Wisdom Apartments, Ludhiya")
+#cust2=Customer.new #("2", "Poul", "New Empire road, Khandala")
 
 # 调用方法
-cust1.total_no_of_customers()
-cust2.total_no_of_customers()
+#cust1.total_no_of_customers()
+#cust2.total_no_of_customers()
+
+m_array = []
+queue = Queue.new
+
+
+threads = []
+5.times do
+	threads<<Thread.new do
+		queue << "a"
+	end
+end
+threads.each{|t| t.join}
+
+puts queue.size
+for i in 0...queue.size do
+	m_array << queue.pop
+	puts queue.size
+       #puts "#{queue.pop}......................"
+       #puts queue.size
+   end
+   puts "#{m_array}"
+   puts queue.size
