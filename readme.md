@@ -1,12 +1,14 @@
-#database config
+#使用指导
+## 首先在mysql中建立一个包含两张表的数据库
 
-###表一（关键词表）
+* 表一（关键词表）
 id, relationword, link
 
-###表二（标题和域名表）
+* 表二（标题和域名表）
 keyword_id, title, domain
 
 
+* 创建语句
 1.create database yilong_db character set gbk
 2.create table baidukeywords(
 	id int unsigned not null auto_increment primary key,
@@ -14,7 +16,7 @@ keyword_id, title, domain
 	link text not null
 )
 
-create table title_domains(
+　create table title_domains(
 	keyword_id int unsigned not null auto_increment primary key,
 	title text not null,
 	domian text not null)
@@ -24,5 +26,5 @@ create table title_domains(
 １．网址链接相同部分删除效果差
 ２．多线程执行
  
- ##running
- ruby get_baidu.rb
+ ##如何运行，在当前目录下运行以下命令
+ruby get_baidu.rb
